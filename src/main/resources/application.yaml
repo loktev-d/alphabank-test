@@ -1,0 +1,5 @@
+currency-api-url: https://openexchangerates.org/api
+gif-api-url: https://api.giphy.com/v1/gifs
+api-keys:
+  currency-api-key: 88fea2b30a2f42e19ea4791d5a5fd4e2
+  gif-api-key: XMQuNiCos2elVLLIW7yYJAkO3K4JPpwH
