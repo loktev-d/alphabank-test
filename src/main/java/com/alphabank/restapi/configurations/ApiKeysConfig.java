@@ -1,12 +1,13 @@
 package com.alphabank.restapi.configurations;
 
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-@ConfigurationProperties(prefix = "apiKeys")
+@ConfigurationProperties(prefix = "api-keys")
 @Configuration("apiKeysConfig")
-public record ApiKeys(
-        String gifApiKey,
-        String currencyApiKey
-) {
+@Data
+public class ApiKeysConfig {
+    private String gifApiKey;
+    private String currencyApiKey;
 }

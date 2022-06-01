@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient("gifs")
+@FeignClient(name = "gifs", url = "${gif-api-url}")
 public interface GifClient {
 
     @RequestMapping(method = RequestMethod.GET, value = "/search?api_key={apiKey}&q={query}&limit={limit}&offset={offset}&rating={rating}&lang={lang}")
