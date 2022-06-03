@@ -15,13 +15,12 @@ public record CurrencyService(CurrencyClient currencyClient, ApiKeysConfig apiKe
                 LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                 apiKeysConfig.getCurrencyApiKey(),
                 currencyCode
-        ).rates().get(currencyCode);
+        ).rates().get(currencyCode.toUpperCase());
 
-        var todayRate = currencyClient.getHistoricalExchangeRates(
-                LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
+        var todayRate = currencyClient.getLatestExchangeRates(
                 apiKeysConfig.getCurrencyApiKey(),
                 currencyCode
-        ).rates().get(currencyCode);
+        ).rates().get(currencyCode.toUpperCase());
 
         return todayRate > yesterdayRate;
     }
