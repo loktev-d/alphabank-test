@@ -10,7 +10,7 @@ public interface GifClient {
 
     @GetMapping("/search?api_key=${gif.api-key}&rating=${gif.rating}&lang=${gif.lang}")
     GetGifBySearchResponse getGifBySearch(
-            @RequestParam("query") String query,
+            @RequestParam("q") String query,
             @RequestParam("limit") int limit,
             @RequestParam("offset") int offset
     );

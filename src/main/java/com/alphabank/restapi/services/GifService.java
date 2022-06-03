@@ -24,11 +24,12 @@ public record GifService(GifClient gifClient) {
             );
 
         var random = new Random();
+        var offsetBound = totalCount >= 5000 ? 5000 : totalCount;
 
         return gifClient.getGifBySearch(
                 query,
                 1,
-                random.nextInt(totalCount)
+                random.nextInt(offsetBound)
         ).data()[0].images().original().url();
     }
 }
