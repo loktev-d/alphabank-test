@@ -2,20 +2,16 @@ package com.alphabank.restapi.clients;
 
 import com.alphabank.restapi.dto.gif.GetGifBySearchResponse;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(name = "gifs", url = "${gif-api-url}")
+@FeignClient(name = "gif", url = "${gif.api-url}")
 public interface GifClient {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/search?api_key={apiKey}&q={query}&limit={limit}&offset={offset}&rating={rating}&lang={lang}")
+    @GetMapping("/search?api_key=${gif.api-key}&rating=${gif.rating}&lang=${gif.lang}")
     GetGifBySearchResponse getGifBySearch(
-            @PathVariable("apiKey") String apiKey,
-            @PathVariable("query") String query,
-            @PathVariable("limit") int limit,
-            @PathVariable("offset") int offset,
-            @PathVariable("rating") String rating,
-            @PathVariable("lang") String lang
+            @RequestParam("query") String query,
+            @RequestParam("limit") int limit,
+            @RequestParam("offset") int offset
     );
 }
