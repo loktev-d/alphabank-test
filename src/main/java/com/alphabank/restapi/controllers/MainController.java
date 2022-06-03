@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public record MainController(CurrencyService currencyService, GifService gifService) {
 
-    @GetMapping("/{currencyCode}")
+    @GetMapping("/api/{currencyCode}")
     public String getCurrencyRateGif(@PathVariable String currencyCode) {
         var gifQuery = currencyService.isCurrencyRateRisingToday(currencyCode) ? "rich" : "broke";
 
