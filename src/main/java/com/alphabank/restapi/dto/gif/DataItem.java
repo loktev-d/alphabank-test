@@ -1,6 +1,6 @@
 package com.alphabank.restapi.dto.gif;
 
-public record Data(
+public record DataItem(
         Images images
 ) {
 }
