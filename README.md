@@ -17,5 +17,5 @@ docker build -t alphabank-test:latest .
 ```
 docker run -d -p 8080:8080 alphabank-test:latest
 ```
-6. Go to `localhost:8080/api` in your browser (RUB currency code is used by default)
+6. Go to `localhost:8080/api?code=<YOUR_CURRENCY_CODE>` or just `localhost:8080/api` (RUB currency code is used by default) in your browser
 7. Done!
