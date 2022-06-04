@@ -4,7 +4,7 @@
    `git clone https://github.com/loktev-d/alphabank-test`
 2. Go to repo folder
    `cd ./alphabank-test`
-3. Set your API keys in `/src/main/resources/application.yaml` or use mine by default
+3. Set your API keys in `./src/main/resources/application.yaml` or use mine by default
 4. Build docker image
    `docker build -t alphabank-test:latest .`
 5. Run docker image
