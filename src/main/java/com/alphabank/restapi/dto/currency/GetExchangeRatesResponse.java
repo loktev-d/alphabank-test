@@ -2,7 +2,7 @@ package com.alphabank.restapi.dto.currency;
 
 import java.util.Map;
 
-public record GetHistoricalExchangeRatesResponse(
+public record GetExchangeRatesResponse(
         Map<String, Double> rates
 ) {
 }
